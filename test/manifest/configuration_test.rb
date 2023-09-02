@@ -11,12 +11,20 @@ module PWA
         FileUtils.rm_f("manifest.json")
       end
 
-      def test_new_returns_a_manifest_hash
-        assert_instance_of PWA::Manifest::Hash, PWA::Manifest::Configuration.new
+      def test_new_returns_an_empty_manifest_hash_when_not_given_a_block
+        result = PWA::Manifest::Configuration.new
+
+        assert_instance_of PWA::Manifest::Hash, result
+        assert_equal({}, result)
       end
 
       def test_new_returns_a_manifest_hash_when_given_a_block
-        assert_instance_of(PWA::Manifest::Hash, PWA::Manifest::Configuration.new {})
+        result = PWA::Manifest::Configuration.new do |builder|
+          builder.background_color = "red"
+        end
+
+        assert_instance_of PWA::Manifest::Hash, result
+        assert_equal "red", result["background_color"]
       end
 
       def test_new_yields_a_member_builder_when_given_a_block

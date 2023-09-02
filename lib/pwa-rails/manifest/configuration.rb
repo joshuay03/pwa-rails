@@ -13,14 +13,15 @@ module PWA
         def new
           super
 
+          builder = member_builder
           if block_given?
-            yield builder = member_builder
+            yield builder
 
             builder.validate!
             generate_manifest! builder
           end
 
-          member_builder.manifest_hash
+          builder.manifest_hash
         end
 
         private

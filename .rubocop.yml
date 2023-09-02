@@ -22,6 +22,9 @@ Style/WordArray:
 Style/MethodDefParentheses:
   Enabled: false
 
+Style/MethodCallWithArgsParentheses:
+  EnforcedStyle: omit_parentheses
+
 Lint/EmptyBlock:
   Exclude:
     - 'test/**/*'

@@ -24,7 +24,7 @@ module PWA
 
       def validate!
         ATTRIBUTES.each do |attr, type|
-          val = instance_variable_get("@#{attr}")
+          val = instance_variable_get "@#{attr}"
           next if val.nil? || val.is_a?(type)
 
           raise InvalidMemberError, "Expected #{attr} to be a #{type}, got #{val.class}"
@@ -32,14 +32,14 @@ module PWA
       end
 
       def manifest_hash
-        instance_variables.each_with_object(Manifest::Hash.new) do |attr, m_hash|
-          val = instance_variable_get(attr)
+        instance_variables.each_with_object Manifest::Hash.new do |attr, m_hash|
+          val = instance_variable_get attr
           cast_val = case val
                      when String, Array
                        val
                      end
 
-          key = attr.to_s.delete('@')
+          key = attr.to_s.delete '@'
           m_hash[key] = cast_val
         end
       end

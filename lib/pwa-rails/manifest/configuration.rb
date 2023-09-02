@@ -30,7 +30,7 @@ module PWA
         end
 
         def generate_manifest! builder
-          File.write('manifest.json', JSON.pretty_generate(builder.manifest_hash))
+          File.write 'manifest.json', JSON.pretty_generate(builder.manifest_hash)
         end
       end
     end

@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name                              = 'pwa-rails'
   s.version                           = '0.0.0'
   s.summary                           = 'PWA Rails'
-  s.description                       = 'Make your Rails app a PWA, with just Ruby, fast.'
+  s.description                       = 'Make your Rails app a PWA, using just Ruby, fast.'
   s.authors                           = ['Joshua Young']
   s.email                             = 'djry1999@gmail.com'
   s.files                             = ['lib/pwa-rails.rb']

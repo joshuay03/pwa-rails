@@ -1,0 +1,31 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - 'test-app/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'test/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*'
+
+Style/StringLiterals:
+  Exclude:
+    - 'test/**/*'
+
+Style/WordArray:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  Enabled: false
+
+Lint/EmptyBlock:
+  Exclude:
+    - 'test/**/*'
+
+Naming/FileName:
+  Exclude:
+    - 'lib/pwa-rails.rb'
